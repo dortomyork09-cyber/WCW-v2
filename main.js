@@ -1,5 +1,4 @@
 const { app, BrowserWindow, screen, ipcMain, Tray, Menu } = require('electron')
-const { setupGcal } = require('./gcal')
 const { exec } = require('child_process')
 const path = require('path')
 const https = require('https')
@@ -118,7 +117,6 @@ function createWindow() {
     })
   })
 
-
   // ===== 번역 (Google Translate 비공식 엔드포인트) =====
   ipcMain.handle('translate', async (event, text, from, to) => {
     return new Promise((resolve) => {
@@ -210,7 +208,6 @@ function createWindow() {
   }
   getSystemInfo()
   setInterval(getSystemInfo, 2000)
-  setupGcal(win)
 }
 
 app.whenReady().then(() => {
