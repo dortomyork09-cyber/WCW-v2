@@ -1,0 +1,30 @@
+{
+  "name": "wcw",
+  "version": "1.0.0",
+  "description": "A Web Connecting the World - 바탕화면 위젯",
+  "main": "main.js",
+  "author": "WCW",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.wcw.widget",
+    "productName": "WCW",
+    "icon": "icon.png",
+    "win": {
+      "target": "portable",
+      "icon": "icon.png"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/.cache",
+      "!dist"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  }
+}
